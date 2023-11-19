@@ -1,0 +1,20 @@
+.form {
+    display: grid;
+    background: #ffffff;
+    gap: 20px;
+    width: 457px;
+    padding: 88px;
+    border-radius: 30px;
+
+    @media (max-width: 768px) {
+        border-radius: 5px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    &__content {
+        display: grid;
+        width: 273px;
+        gap: 15px;
+    }
+}

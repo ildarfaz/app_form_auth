@@ -1,0 +1,23 @@
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        font-size: 1.8rem;
+        background-color: #985ACE;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .active {
+        border: 1px solid #dedede;
+        border-radius: 5px;
+    }
+
+}

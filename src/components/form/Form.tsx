@@ -7,7 +7,12 @@ import { login } from "../../API";
 const initialAuth = {
     email: "", password: ""
 }
-
+const saveToken = (token: string) => {
+    sessionStorage.setItem('tokenData', JSON.stringify(token));
+}
+const getToken = () => {
+    return sessionStorage.getItem('tokenData');
+}
 export const Form: FC = () => {
     const [data, setData] = useState(initialAuth);
     const handleAuth = (type: string) => {
@@ -18,8 +23,8 @@ export const Form: FC = () => {
     const handleClick = async () => {
         if (data.email && data.password) {
             const { token } = await login(data);
-            alert(`Token: ${token}`);
-            setData(initialAuth);
+            saveToken(token);
+            alert(`Token: ${getToken()}`)
         }
     }
 
@@ -29,7 +34,7 @@ export const Form: FC = () => {
             <form className={styles.form__content}>
                 <Input type={"email"} placeholder="E-mail" onChange={handleAuth("email")} value={data["email"]} />
                 <Input type={"password"} placeholder="Пароль" onChange={handleAuth("password")} value={data["password"]} />
-                <Button children={"ВОЙТИ"} onSubmit={handleClick} />
+                <Button children={"ВОЙТИ"} onClick={handleClick} />
             </form>
         </div>
     )

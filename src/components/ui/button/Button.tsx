@@ -3,15 +3,15 @@ import styles from "./button.module.scss";
 
 type TButton = {
   children: JSX.Element | string;
-  onSubmit: () => void;
+  onClick: () => void;
   active?: boolean;
   isDisabled?: boolean;
 }
-export const Button: FC<TButton> = ({ children, onSubmit, active, isDisabled = false }) => {
+export const Button: FC<TButton> = ({ children, onClick, active, isDisabled = false }) => {
   return (
     <div className={styles.box}>
       <button className={active ? styles.active : ''}
-        onSubmit={onSubmit}
+        onClick={onClick}
         disabled={isDisabled}>{children}</button>
     </div>
   )

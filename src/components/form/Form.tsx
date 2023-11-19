@@ -26,12 +26,11 @@ export const Form: FC = () => {
     return (
         <div className={styles.form}>
             <Header title="ВХОД" />
-            <div className={styles.form__content}>
+            <form className={styles.form__content}>
                 <Input type={"email"} placeholder="E-mail" onChange={handleAuth("email")} value={data["email"]} />
                 <Input type={"password"} placeholder="Пароль" onChange={handleAuth("password")} value={data["password"]} />
-                <Button children={"ВОЙТИ"} onClick={handleClick} />
-            </div>
-
+                <Button children={"ВОЙТИ"} onSubmit={handleClick} />
+            </form>
         </div>
     )
 }

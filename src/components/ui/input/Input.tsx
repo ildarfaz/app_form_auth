@@ -15,7 +15,7 @@ export const Input: FC<IInput> = ({ type, placeholder, onChange, value }) => {
     }
     return (
         <div className={styles.box}>
-            <input type={type} ref={inputRef} placeholder={placeholder} onChange={handleInput} value={value} />
+            <input type={type} ref={inputRef} placeholder={placeholder} onChange={handleInput} value={value} required />
         </div>
     )
 }
